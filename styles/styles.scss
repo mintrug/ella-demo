@@ -1,0 +1,687 @@
+@import "./global";
+
+.wrapper {
+    width: 100%;
+}
+
+.container {
+    width: 1170px;
+    margin: auto;
+}
+
+// <!-- The red line at the top of the website -->
+.background-first-banner {
+    background-color: #ffe8e8;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    overflow: hidden;
+
+    .first-banner,
+    .second-banner {
+        font-size: 12px;
+        color: #b05d5d;
+        padding: 7px 0;
+        display: flex;
+        gap: 100px;
+        justify-content: center;
+        white-space: nowrap;
+
+        .banner-text {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+
+            .icon {
+                line-height: 0;
+            }
+
+            .regular-text {
+                @include font-poppins(400);
+            }
+
+            .bold-text {
+                @include font-poppins(700);
+            }
+        }
+    }
+
+    .first-banner {
+        animation: 20s linear 0s infinite running text-slide;
+
+        @keyframes text-slide {
+            from {
+                transform: translateX(1880px);
+            }
+
+            to {
+                transform: translateX(-1880px);
+            }
+        }
+    }
+
+    .second-banner {
+        animation: 20s linear 10s infinite running text-slide;
+        margin-top: -32px;
+        visibility: hidden;
+
+        @keyframes text-slide {
+            from {
+                visibility: visible;
+                transform: translateX(1880px);
+            }
+
+            to {
+                transform: translateX(-1880px);
+            }
+        }
+    }
+}
+
+// <!-- The main title of the website -->
+.header {
+    margin-top: 30px;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        // Remove extra height of div tag when inserting image through img tag
+        &-logo {
+            line-height: 0;
+        }
+
+        // The content on the right side of this section
+        .header-content {
+            .main-content {
+                @include font-poppins(600);
+                font-size: 12px;
+                text-transform: uppercase;
+                margin: 0 10px 11px 0;
+                text-align: right;
+            }
+
+            .call-to-action {
+                @include font-poppins(400);
+                font-size: 12px;
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                color: #323232;
+
+                .shoping-cart {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+
+                    .number {
+                        background-color: #ffe5e5;
+                        width: 20px;
+                        height: 20px;
+                        text-align: center;
+                        border-radius: 45px;
+                        line-height: 1.7;
+                    }
+                }
+
+                .wish-lists {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+
+                    .icon {
+                        line-height: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// The menu bar
+.navbar {
+    @include font-poppins(700);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    height: 45px;
+    background-color: #232323;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+
+    .navbar-content {
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+
+            .info-tag {
+                position: relative;
+
+                img {
+                    position: absolute;
+                    top: -20px;
+                    right: -14px;
+                }
+            }
+        }
+    }
+}
+
+// The main banner of the website
+.main-banner {
+
+    // Remove extra height of div tag when inserting image through img tag
+    line-height: 0;
+
+    .container {
+        position: relative;
+    }
+
+    .description {
+        position: absolute;
+        text-align: center;
+        width: 400px;
+        top: 260px;
+        left: 20px;
+        line-height: 1.5;
+
+        .description-header {
+            @include font-poppins(700);
+            font-size: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #232323;
+        }
+
+        .description-content {
+            @include font-poppins(400);
+            font-size: 12px;
+            line-height: 22px;
+            margin-top: 15px;
+        }
+
+        .button {
+            margin: 41px auto 0 auto;
+            width: 194px;
+            height: 46px;
+            background-color: #232323;
+
+            .button-content {
+                @include font-poppins(700);
+                color: #ffffff;
+                letter-spacing: 2px;
+                font-size: 14px;
+                line-height: 46px;
+                background-color: #232323;
+            }
+        }
+    }
+
+    .main-banner-img {
+        img {
+            width: 100%;
+            height: 720px;
+            object-fit: cover;
+            object-position: top;
+        }
+    }
+}
+
+// The sub banner of the website
+.sub-banner {
+    .container {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 30px;
+
+        .sub-banner-item {
+            position: relative;
+            line-height: 0;
+
+            .item-title {
+                @include font-poppins(600);
+                font-size: 16px;
+                letter-spacing: 1px;
+                color: #ffffff;
+                text-transform: uppercase;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+            }
+
+            &:hover {
+                .item-title {
+                    text-decoration: underline;
+                    text-decoration-color: currentColor;
+                    text-underline-offset: 10px;
+                }
+
+                .overlay {
+                    position: absolute;
+                    background: url("../images/sub-banner-hover.png");
+                    width: 370px;
+                    height: 200px;
+                    top: 0;
+                }
+            }
+        }
+    }
+}
+
+// The word "New arrivals"
+.sub-title {
+    margin-top: 68px;
+
+    .container {
+        display: grid;
+        grid-template-columns: auto 370px auto;
+        gap: 30px;
+
+        .sub-title-content {
+            text-align: center;
+
+            .new-arrivals {
+                @include font-poppins(700);
+                font-size: 20px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: #232323;
+                transform: translateY(-50%);
+            }
+
+            .view-all {
+                @include font-poppins(400);
+                font-size: 12px;
+
+                span {
+                    cursor: pointer;
+
+                    &:hover {
+                        text-decoration: underline;
+                        text-underline-offset: 3px;
+                    }
+                }
+            }
+        }
+
+        .sub-title-line {
+            hr {
+                height: 4px;
+                background-color: #000000;
+            }
+        }
+    }
+}
+
+// The product list
+.product {
+    margin-top: 40px;
+
+    .container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 30px;
+
+        .product-cart {
+            text-align: center;
+            position: relative;
+
+            .like-icon {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                z-index: 1;
+            }
+
+            .product-img {
+                line-height: 0;
+                position: relative;
+
+                // Hover effect
+                .add-button-container {
+                    display: none;
+                    padding: 15px;
+                    background-color: #ffffff;
+                    position: absolute;
+                    bottom: 0;
+
+                    .add-button {
+                        @include font-poppins(600);
+                        font-size: 14px;
+                        letter-spacing: 1px;
+                        text-transform: uppercase;
+                        width: 240px;
+                        height: 45px;
+                        border: #232323 1px solid;
+                        line-height: 45px;
+                    }
+                }
+
+                // Hover effect
+                .eyes-icon {
+                    display: none;
+                    position: absolute;
+                    top: 56px;
+                    right: 10px;
+                }
+
+                // Hover effect
+                .submit-button-container {
+                    display: none;
+                    padding: 21px 15px 15px;
+                    background-color: #ffffff;
+                    position: absolute;
+                    bottom: 0;
+
+                    .size-container {
+                        line-height: 1;
+                        @include font-poppins(500);
+                        color: #232323;
+
+                        .size-checked {
+                            font-size: 12px;
+                        }
+
+                        .list-size {
+                            list-style-type: none;
+                            display: flex;
+                            justify-content: space-around;
+                            font-size: 14px;
+                            margin-top: 18px;
+
+                            .xs {
+                                text-decoration: underline;
+                                text-underline-offset: 3px;
+                            }
+                        }
+                    }
+
+                    .close-icon {
+                        position: absolute;
+                        right: 15px;
+                        top: -28px;
+                    }
+
+                    .submit-button {
+                        @include font-poppins(600);
+                        font-size: 14px;
+                        letter-spacing: 1px;
+                        color: #ffffff;
+                        text-transform: uppercase;
+                        width: 240px;
+                        height: 45px;
+                        background-color: #232323;
+                        line-height: 45px;
+                        margin-top: 27px;
+                    }
+                }
+
+                &:hover {
+                    .add-button-container {
+                        display: block;
+                    }
+
+                    .submit-button-container {
+                        display: block;
+                    }
+
+                    .eyes-icon {
+                        display: block;
+                    }
+                }
+            }
+
+            .product-detail {
+                margin-top: 20px;
+                line-height: 1;
+
+                .product-title {
+                    @include font-poppins(400);
+                    font-size: 12px;
+                    color: #969696;
+                    text-transform: uppercase
+                }
+
+                .product-content {
+                    @include font-poppins(400);
+                    font-size: 12px;
+                    color: #232323;
+                    margin-top: 15px
+                }
+
+                .product-price {
+                    @include font-poppins(600);
+                    font-size: 14px;
+                    color: #232323;
+                    margin: 19px 0;
+                }
+
+                // Remove extra height of div tag when inserting image through img tag
+                .product-color {
+                    line-height: 0;
+                    position: relative;
+
+                    span {
+                        @include font-poppins(400);
+                        font-size: 12px;
+                        color: #969696;
+                        position: absolute;
+                        top: 17px;
+                        right: 34px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// The show more button
+.show-more-button {
+    margin-top: 60px;
+
+    .container {
+        @include font-poppins(700);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #232323;
+        text-align: center;
+        line-height: 45px;
+        width: 300px;
+        height: 45px;
+        border: #b8b8b8 1px solid;
+    }
+}
+
+// The bottom of the website, before the footer
+.last-section {
+    margin-top: 70px;
+    background-color: #fafafa;
+    text-align: center;
+    padding: 50px 0 70px;
+
+    .last-section-header {
+        .title {
+            @include font-poppins(700);
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #232323;
+            position: relative;
+
+            .instagram-icon {
+                position: absolute;
+                left: 425px;
+                top: 3px;
+            }
+        }
+
+        .content {
+            @include font-poppins(400);
+            font-size: 12px;
+            color: #232323;
+            margin-top: 20px;
+        }
+    }
+
+    .slide-img {
+        line-height: 0;
+        letter-spacing: 1px;
+        margin-top: 40px;
+        position: relative;
+
+        .prev-btn {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        .next-btn {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateX(50%) translateY(-50%);
+        }
+    }
+
+    .view-gallery-button {
+        @include font-poppins(600);
+        font-size: 14px;
+        letter-spacing: 2px;
+        color: #ffffff;
+        text-transform: uppercase;
+        width: 240px;
+        height: 45px;
+        background-color: #232323;
+        line-height: 45px;
+        margin: 40px auto 0;
+    }
+}
+
+// The end of the website
+.footer {
+    background-color: #232323;
+    padding-top: 40px;
+
+    .navigation {
+        .container {
+            display: grid;
+            grid-template-columns: 230px 230px 230px auto;
+            gap: 10px;
+            padding-bottom: 50px;
+
+            .title {
+                @include font-poppins(600);
+                font-size: 14px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 12px;
+                color: #ffffff;
+            }
+
+            .content {
+                @include font-poppins(400);
+                font-size: 12px;
+                line-height: 28px;
+                list-style-type: none;
+                color: #cfcfcf;
+            }
+
+            .form-sign-up {
+                display: flex;
+                gap: 10px;
+                margin-top: 10px;
+
+                input {
+                    @include font-poppins(400);
+                    font-size: 12px;
+                    line-height: 22px;
+                    color: #cfcfcf;
+                    background-color: #232323;
+                    width: 288px;
+                    height: 45px;
+                    border: #cfcfcf 1px solid;
+                    padding: 0 16px;
+
+                    &::placeholder {
+                        color: #cfcfcf;
+                    }
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                .sign-up-btn {
+                    @include font-poppins(700);
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    text-align: center;
+                    line-height: 45px;
+                    width: 124px;
+                    height: 45px;
+                    background-color: #ffffff;
+
+                }
+            }
+
+            .social-media {
+                margin-top: 35px;
+                letter-spacing: -4px;
+
+                img {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+
+    hr {
+        background-color: #282828;
+        height: 1px;
+        border: none;
+    }
+
+    .copyright {
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 0 58px;
+
+            .content {
+                @include font-poppins(400);
+                font-size: 12px;
+                line-height: 28px;
+                color: #cfcfcf;
+            }
+
+            .payment {
+                line-height: 0;
+
+                img {
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 64em) {
+    .background-first-banner {
+        background-color: #282828;
+    }
+}
+
+@media only screen and (max-width: 46.25em) {
+    .background-first-banner {
+        background-color: #cfcfcf;
+    }
+}

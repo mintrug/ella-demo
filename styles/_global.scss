@@ -1,0 +1,13 @@
+/*font-weight:
+    regular: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+    extrabold: 800
+*/
+
+@mixin font-poppins($font-weight) {
+    font-family: "Poppins", sans-serif;
+    font-weight: $font-weight;
+    font-style: normal;
+}
