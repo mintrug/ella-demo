@@ -674,14 +674,46 @@
     }
 }
 
+// Screen Tablet
 @media only screen and (max-width: 64em) {
     .background-first-banner {
-        background-color: #282828;
+
+        .first-banner,
+        .second-banner {
+            font-size: 10px;
+        }
+
+        .first-banner {
+            animation: 20s linear 0s infinite running text-slide;
+
+            @keyframes text-slide {
+                from {
+                    transform: translateX(1650px);
+                }
+
+                to {
+                    transform: translateX(-1650px);
+                }
+            }
+        }
+
+        .second-banner {
+            animation: 20s linear 10s infinite running text-slide;
+            margin-top: -29px;
+
+            @keyframes text-slide {
+                from {
+                    visibility: visible;
+                    transform: translateX(1650px);
+                }
+
+                to {
+                    transform: translateX(-1650px);
+                }
+            }
+        }
     }
 }
 
-@media only screen and (max-width: 46.25em) {
-    .background-first-banner {
-        background-color: #cfcfcf;
-    }
-}
+// Screen Mobile
+@media only screen and (max-width: 46.25em) {}
