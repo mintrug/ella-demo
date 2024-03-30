@@ -9,6 +9,13 @@
     margin: auto;
 }
 
+// Responsive for container
+@media only screen and (max-width: 74.6875em) {
+    .container {
+        width: 100%;
+    }
+}
+
 // <!-- The red line at the top of the website -->
 .background-first-banner {
     background-color: #ffe8e8;
@@ -78,6 +85,44 @@
     }
 }
 
+// Responsive for The red line at the top of the website
+@media only screen and (max-width: 46.25em) {
+    .background-first-banner {
+
+        .first-banner,
+        .second-banner {
+            font-size: 10px;
+        }
+
+        .first-banner {
+            @keyframes text-slide {
+                from {
+                    transform: translateX(1650px);
+                }
+
+                to {
+                    transform: translateX(-1650px);
+                }
+            }
+        }
+
+        .second-banner {
+            margin-top: -29px;
+
+            @keyframes text-slide {
+                from {
+                    visibility: visible;
+                    transform: translateX(1650px);
+                }
+
+                to {
+                    transform: translateX(-1650px);
+                }
+            }
+        }
+    }
+}
+
 // <!-- The main title of the website -->
 .header {
     margin-top: 30px;
@@ -136,6 +181,45 @@
                 }
             }
         }
+
+        .menu-button-wrapper {
+            display: none;
+        }
+
+        @media only screen and (max-width: 46em) {
+
+            .header-content {
+                display: none;
+            }
+
+            .menu-button-wrapper {
+                background-color: grey;
+                width: 60px;
+                height: 60px;
+                display: block;
+            }
+        }
+    }
+}
+
+// Responsive for the main title of the website
+@media only screen and (max-width: 77.1875em) {
+    .header {
+        padding: 0 20px;
+    }
+}
+
+@media only screen and (max-width: 46em) {
+
+    .header-content {
+        display: none;
+    }
+
+    .menu-button-wrapper {
+        background-color: grey;
+        width: 60px;
+        height: 60px;
+        display: block;
     }
 }
 
@@ -673,47 +757,3 @@
         }
     }
 }
-
-// Screen Tablet
-@media only screen and (max-width: 64em) {
-    .background-first-banner {
-
-        .first-banner,
-        .second-banner {
-            font-size: 10px;
-        }
-
-        .first-banner {
-            animation: 20s linear 0s infinite running text-slide;
-
-            @keyframes text-slide {
-                from {
-                    transform: translateX(1650px);
-                }
-
-                to {
-                    transform: translateX(-1650px);
-                }
-            }
-        }
-
-        .second-banner {
-            animation: 20s linear 10s infinite running text-slide;
-            margin-top: -29px;
-
-            @keyframes text-slide {
-                from {
-                    visibility: visible;
-                    transform: translateX(1650px);
-                }
-
-                to {
-                    transform: translateX(-1650px);
-                }
-            }
-        }
-    }
-}
-
-// Screen Mobile
-@media only screen and (max-width: 46.25em) {}

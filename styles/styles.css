@@ -14,6 +14,11 @@
   margin: auto;
 }
 
+@media only screen and (max-width: 74.6875em) {
+  .container {
+    width: 100%;
+  }
+}
 .background-first-banner {
   background-color: #ffe8e8;
   position: sticky;
@@ -79,6 +84,32 @@
   }
 }
 
+@media only screen and (max-width: 46.25em) {
+  .background-first-banner .first-banner,
+  .background-first-banner .second-banner {
+    font-size: 10px;
+  }
+  @keyframes text-slide {
+    from {
+      transform: translateX(1650px);
+    }
+    to {
+      transform: translateX(-1650px);
+    }
+  }
+  .background-first-banner .second-banner {
+    margin-top: -29px;
+  }
+  @keyframes text-slide {
+    from {
+      visibility: visible;
+      transform: translateX(1650px);
+    }
+    to {
+      transform: translateX(-1650px);
+    }
+  }
+}
 .header {
   margin-top: 30px;
 }
@@ -130,7 +161,37 @@
 .header .container .header-content .call-to-action .wish-lists .icon {
   line-height: 0;
 }
+.header .container .menu-button-wrapper {
+  display: none;
+}
+@media only screen and (max-width: 46em) {
+  .header .container .header-content {
+    display: none;
+  }
+  .header .container .menu-button-wrapper {
+    background-color: grey;
+    width: 60px;
+    height: 60px;
+    display: block;
+  }
+}
 
+@media only screen and (max-width: 77.1875em) {
+  .header {
+    padding: 0 20px;
+  }
+}
+@media only screen and (max-width: 46em) {
+  .header-content {
+    display: none;
+  }
+  .menu-button-wrapper {
+    background-color: grey;
+    width: 60px;
+    height: 60px;
+    display: block;
+  }
+}
 .navbar {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
@@ -610,37 +671,6 @@
 }
 .footer .copyright .container .payment img {
   margin-left: 15px;
-}
-
-@media only screen and (max-width: 64em) {
-  .background-first-banner .first-banner,
-  .background-first-banner .second-banner {
-    font-size: 10px;
-  }
-  .background-first-banner .first-banner {
-    animation: 20s linear 0s infinite running text-slide;
-  }
-  @keyframes text-slide {
-    from {
-      transform: translateX(1650px);
-    }
-    to {
-      transform: translateX(-1650px);
-    }
-  }
-  .background-first-banner .second-banner {
-    animation: 20s linear 10s infinite running text-slide;
-    margin-top: -29px;
-  }
-  @keyframes text-slide {
-    from {
-      visibility: visible;
-      transform: translateX(1650px);
-    }
-    to {
-      transform: translateX(-1650px);
-    }
-  }
 }
 
 /*# sourceMappingURL=styles.css.map */
